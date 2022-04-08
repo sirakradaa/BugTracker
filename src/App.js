@@ -1,14 +1,24 @@
-import logo from './logo.svg';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import { IBUG } from './IBug';
 import { v4 as uuid } from 'uuid';
 import BugListTable from './BugListTable';
+
+const LOCAL_STORAGE_KEY = 'bugtrackerApp.bugList'
 
 function App() {
     const [newBugDescription, SetNewBugDescription] = useState('');
     const [newBugPriority, setNewBugPriority] = useState('Medium');
     const [bugList, setBugList] = useState([]);
+
+
+  useEffect(() => {
+    const storedBugList = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if(storedBugList) setBugList(storedBugList)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(bugList))
+  }, [bugList])
     
     const addBug = (event: FormEvent) => {
       event.preventDefault();
