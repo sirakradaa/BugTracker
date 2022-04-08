@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/BugTracker/static/css/main.50a67da8.css",
+    "main.js": "/BugTracker/static/js/main.157c74ef.js",
+    "static/js/787.0b79ed1d.chunk.js": "/BugTracker/static/js/787.0b79ed1d.chunk.js",
+    "index.html": "/BugTracker/index.html",
+    "main.50a67da8.css.map": "/BugTracker/static/css/main.50a67da8.css.map",
+    "main.157c74ef.js.map": "/BugTracker/static/js/main.157c74ef.js.map",
+    "787.0b79ed1d.chunk.js.map": "/BugTracker/static/js/787.0b79ed1d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50a67da8.css",
+    "static/js/main.157c74ef.js"
+  ]
+}
