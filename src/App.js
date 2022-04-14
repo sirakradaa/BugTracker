@@ -10,6 +10,9 @@ function App() {
     const [newBugPriority, setNewBugPriority] = useState('Medium');
     const [bugList, setBugList] = useState([]);
 
+    useEffect(() => {
+      document.title = "Bug Tracker"
+   }, []);
 
   useEffect(() => {
     const storedBugList = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
@@ -52,7 +55,7 @@ function App() {
         <label htmlFor="newBugDescription">
         New bug description: 
         </label>
-        <input type="text" id="newBugDescription" value = {newBugDescription} onChange={event => SetNewBugDescription(event.target.value)}/>
+        <input data-testid="newBugDescription" type="text" id="newBugDescription" value = {newBugDescription} onChange={event => SetNewBugDescription(event.target.value)}/>
         <label htmlFor="newBugPriority">
         New bug priority:
         </label>
@@ -61,7 +64,7 @@ function App() {
           <option value="Medium">Medium</option>
           <option value="High">High</option>
         </select>
-        <button type="submit">Add New Bug</button>
+        <button data-testid="addBtn" type="submit">Add New Bug</button>
       </form>
 
     </div>
